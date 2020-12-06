@@ -1,7 +1,7 @@
 def _calculate_seat_ids():
     seat_ids = []
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day5.txt', 'r'):
         line = line.strip()
         r_min, r_max = 0, 127
         c_min, c_max = 0, 7

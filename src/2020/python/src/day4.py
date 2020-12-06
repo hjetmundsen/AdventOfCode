@@ -28,7 +28,7 @@ def star1():
     found = set()
     num_valid = 0
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day4.txt', 'r'):
         line = line.strip()
         if line == '':
             if all([x in found for x in required]): num_valid += 1
@@ -44,7 +44,7 @@ def star2():
     found = dict()
     num_valid = 0
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day4.txt', 'r'):
         line = line.strip()
         if line == '':
             if all([x in found for x in required]) and _validate_fields(found): num_valid += 1

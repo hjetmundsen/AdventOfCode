@@ -1,7 +1,7 @@
 def star1():
     result = 0
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day2.txt', 'r'):
         ct, ch, pswd = line.split(' ')
         ct = ct.split('-')
         ch = ch[0]
@@ -15,7 +15,7 @@ def star1():
 def star2():
     result = 0
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day2.txt', 'r'):
         ct, ch, pswd = line.split(' ')
         ct = ct.split('-')
         ch = ch[0]

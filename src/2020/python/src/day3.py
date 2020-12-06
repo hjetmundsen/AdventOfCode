@@ -3,7 +3,7 @@ def star1():
     col = 0
     num_trees = 0
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day3.txt', 'r'):
         grid.append(line.strip())
 
     for row in grid:
@@ -17,7 +17,7 @@ def star1():
 def star2():
     grid = []
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day3.txt', 'r'):
         grid.append(line.strip())
 
     def solve(x, y):

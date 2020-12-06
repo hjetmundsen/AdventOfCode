@@ -2,7 +2,7 @@ def star1():
     result = 0
     yes = set()
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day6.txt', 'r'):
         line = line.strip()
 
         if line == '':
@@ -19,7 +19,7 @@ def star2():
     result = 0
     responses = []
 
-    for line in open('input.txt', 'r'):
+    for line in open('../inputs/day6.txt', 'r'):
         line = line.strip()
 
         if line == '':
