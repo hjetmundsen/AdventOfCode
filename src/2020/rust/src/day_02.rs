@@ -1,15 +1,15 @@
 use crate::utils;
 
-fn star1() -> i32 {
-    let lines: Vec<String> = utils::file_to_lines("../inputs/day2.txt");
-    let mut result: i32 = 0;
+fn star1() -> u32 {
+    let lines = utils::file_to_lines("../inputs/day2.txt");
+    let mut result = 0;
     for line in lines {
         let parts: Vec<&str> = line.split(' ').collect();
-        let bounds: Vec<i32> = parts[0].split('-').map(|x| x.parse::<i32>().unwrap()).collect();
-        let letter: char = parts[1].chars().next().unwrap();
-        let password: &str = parts[2];
+        let bounds: Vec<u32> = parts[0].split('-').map(|x| x.parse::<u32>().unwrap()).collect();
+        let letter = parts[1].chars().next().unwrap();
+        let password = parts[2];
 
-        let count: i32 = password.matches(letter).count() as i32;
+        let count = password.matches(letter).count() as u32;
 
         if count >= bounds[0] && count <= bounds[1] {
             result += 1;
@@ -19,13 +19,13 @@ fn star1() -> i32 {
     return result;
 }
 
-fn star2() -> i32 {
+fn star2() -> u32 {
     let lines: Vec<String> = utils::file_to_lines("../inputs/day2.txt");
-    let mut result: i32 = 0;
+    let mut result = 0;
     for line in lines {
         let parts: Vec<&str> = line.split(' ').collect();
-        let positions: Vec<i32> = parts[0].split('-').map(|x| x.parse::<i32>().unwrap()).collect();
-        let letter: char = parts[1].chars().next().unwrap();
+        let positions: Vec<u32> = parts[0].split('-').map(|x| x.parse::<u32>().unwrap()).collect();
+        let letter = parts[1].chars().next().unwrap();
         let password = parts[2];
 
         if (password.chars().nth((positions[0]-1) as usize).unwrap() == letter) ^ (password.chars().nth((positions[1]-1) as usize).unwrap() == letter) {
