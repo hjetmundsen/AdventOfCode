@@ -49,14 +49,14 @@ fn star1() -> u32 {
     let mut result: u32 = 0;
     let mut found: HashSet<&str> = HashSet::new();
 
-    for line in lines.iter().enumerate() {
-        if line.1 == "" {
+    for line in &lines {
+        if line == "" {
             if required.iter().all(|&x| found.contains(x)) {
                 result += 1;
             }
             found.clear();
         } else {
-            for field in line.1.split(' ') {
+            for field in line.split(' ') {
                 found.insert(field.get(..3).unwrap());
             }
         }
@@ -71,14 +71,14 @@ fn star2() -> u32 {
     let mut result: u32 = 0;
     let mut found: HashMap<&str, &str> = HashMap::new();
 
-    for line in lines.iter().enumerate() {
-        if line.1 == "" {
+    for line in &lines {
+        if line == "" {
             if required.iter().all(|&x| found.contains_key(x)) && validate_fields(&found) {
                 result += 1;
             }
             found.clear();
         } else {
-            for field in line.1.split(' ') {
+            for field in line.split(' ') {
                 found.insert(field.get(..3).unwrap(), field.get(4..).unwrap());
             }
         }
