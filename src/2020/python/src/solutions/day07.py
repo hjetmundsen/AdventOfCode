@@ -8,7 +8,7 @@ for l in open("../../inputs/day7.txt", "r"):
         bags[bag][b] = int(count)
 
 
-def star1():
+def _star1():
     answer = set()
 
     def search(color):
@@ -21,7 +21,7 @@ def star1():
     return len(answer)
 
 
-def star2():
+def _star2():
     def search(bag):
         count = 1
         for s in bags[bag]:
@@ -32,4 +32,5 @@ def star2():
     return search("shiny gold") - 1  # Rm one for shiny gold itself
 
 
-print("STAR 1: {}\nSTAR 2: {}".format(star1(), star2()))
+def day07():
+    print("STAR 1: {}\nSTAR 2: {}".format(_star1(), _star2()))

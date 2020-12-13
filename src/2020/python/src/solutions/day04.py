@@ -28,7 +28,7 @@ def _validate_fields(fields, counter):
     )
 
 
-def star1():
+def _star1():
     required = ["hcl", "iyr", "eyr", "ecl", "pid", "byr", "hgt"]
     found = set()
     num_valid = 0
@@ -46,7 +46,7 @@ def star1():
     return num_valid
 
 
-def star2():
+def _star2():
     required = ["hcl", "iyr", "eyr", "ecl", "pid", "byr", "hgt"]
     found = dict()
     num_valid = 0
@@ -66,4 +66,5 @@ def star2():
     return num_valid
 
 
-print("STAR 1: {}\nSTAR 2: {}".format(star1(), star2()))
+def day04():
+    print("STAR 1: {}\nSTAR 2: {}".format(_star1(), _star2()))

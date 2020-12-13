@@ -1,7 +1,7 @@
 def _calculate_seat_ids():
     seat_ids = []
 
-    for line in open("../inputs/day5.txt", "r"):
+    for line in open("../../inputs/day5.txt", "r"):
         line = line.strip()
         r_min, r_max = 0, 127
         c_min, c_max = 0, 7
@@ -29,11 +29,11 @@ def _calculate_seat_ids():
     return seat_ids
 
 
-def star1():
+def _star1():
     return max(_calculate_seat_ids())
 
 
-def star2():
+def _star2():
     seat_ids = _calculate_seat_ids()
     seat_ids.sort()
     for i in range(len(seat_ids) - 1):
@@ -41,4 +41,5 @@ def star2():
             return seat_ids[i] + 1
 
 
-print("STAR 1: {}\nSTAR 2: {}".format(star1(), star2()))
+def day05():
+    print("STAR 1: {}\nSTAR 2: {}".format(_star1(), _star2()))
