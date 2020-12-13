@@ -9,7 +9,7 @@ fn star1() -> i32 {
     for line in lines {
         let num = line.parse::<i32>().unwrap();
         if visited.contains(&(2020 - num)) {
-            return num * (2020 - num)
+            return num * (2020 - num);
         }
 
         visited.insert(num);
