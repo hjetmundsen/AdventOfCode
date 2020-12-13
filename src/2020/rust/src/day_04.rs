@@ -14,7 +14,7 @@ macro_rules! unwrap_or_return {
     }
 }
 
-fn validate_fields(fields: &HashMap<&str, &str>, counter: i32) -> bool {
+fn validate_fields(fields: &HashMap<&str, &str>) -> bool {
     let eye_colors: HashSet<&str> = vec!["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].into_iter().collect();
     let byr = unwrap_or_return!(fields.get("byr").unwrap().parse::<u32>());
     let iyr = unwrap_or_return!(fields.get("iyr").unwrap().parse::<u32>());
@@ -71,11 +71,9 @@ fn star2() -> u32 {
     let mut result: u32 = 0;
     let mut found: HashMap<&str, &str> = HashMap::new();
 
-    let mut counter = 0;
-
     for line in lines.iter().enumerate() {
         if line.1 == "" {
-            if required.iter().all(|&x| found.contains_key(x)) && validate_fields(&found, counter) {
+            if required.iter().all(|&x| found.contains_key(x)) && validate_fields(&found) {
                 result += 1;
             }
             found.clear();
@@ -84,8 +82,6 @@ fn star2() -> u32 {
                 found.insert(field.get(..3).unwrap(), field.get(4..).unwrap());
             }
         }
-
-        counter += 1;
     }
 
     return result;
