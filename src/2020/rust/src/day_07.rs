@@ -1,5 +1,3 @@
-use crate::utils;
-
 fn star1() -> u32 {
     0
 }

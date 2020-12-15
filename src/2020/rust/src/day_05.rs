@@ -16,7 +16,7 @@ fn calculate_seat_ids() -> Vec<u32> {
                 r_min = r_mid
             }
         }
-        
+
         let row: u32 = r_min;
 
         for c in line[7..].chars() {
@@ -31,10 +31,9 @@ fn calculate_seat_ids() -> Vec<u32> {
 
             seat_ids.push(row * 8 + col);
         }
-
     }
 
-    return seat_ids;
+    seat_ids
 }
 
 fn star1() -> u32 {
@@ -43,19 +42,19 @@ fn star1() -> u32 {
 
 fn star2() -> u32 {
     let mut seat_ids = calculate_seat_ids();
-    seat_ids.sort();
+    seat_ids.sort_unstable();
 
-    for (i,v) in seat_ids.iter().enumerate() {
+    for (i, v) in seat_ids.iter().enumerate() {
         if i == seat_ids.len() {
             break;
         }
 
-        if *seat_ids.get(i+1).unwrap() == v + 2 {
+        if *seat_ids.get(i + 1).unwrap() == v + 2 {
             return v + 1;
         }
     }
 
-    return 0;
+    0
 }
 
 pub fn main() {
