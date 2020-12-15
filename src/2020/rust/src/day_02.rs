@@ -19,7 +19,7 @@ fn star1() -> u32 {
         }
     }
 
-    return result;
+    result
 }
 
 fn star2() -> u32 {
@@ -41,7 +41,7 @@ fn star2() -> u32 {
         }
     }
 
-    return result;
+    result
 }
 
 pub fn main() {

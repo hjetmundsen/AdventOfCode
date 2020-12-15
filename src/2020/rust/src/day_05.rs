@@ -33,7 +33,7 @@ fn calculate_seat_ids() -> Vec<u32> {
         }
     }
 
-    return seat_ids;
+    seat_ids
 }
 
 fn star1() -> u32 {
@@ -42,7 +42,7 @@ fn star1() -> u32 {
 
 fn star2() -> u32 {
     let mut seat_ids = calculate_seat_ids();
-    seat_ids.sort();
+    seat_ids.sort_unstable();
 
     for (i, v) in seat_ids.iter().enumerate() {
         if i == seat_ids.len() {
@@ -54,7 +54,7 @@ fn star2() -> u32 {
         }
     }
 
-    return 0;
+    0
 }
 
 pub fn main() {

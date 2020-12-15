@@ -33,7 +33,7 @@ fn validate_fields(fields: &HashMap<&str, &str>) -> bool {
         return false;
     }
 
-    return byr >= 1920
+    byr >= 1920
         && byr <= 2002
         && iyr >= 2010
         && iyr <= 2020
@@ -43,7 +43,7 @@ fn validate_fields(fields: &HashMap<&str, &str>) -> bool {
             || (hgt_unit == "in" && hgt_val >= 59 && hgt_val <= 76))
         && hex_regex.is_match(hcl)
         && eye_colors.contains(ecl)
-        && pid.parse::<u64>().is_ok();
+        && pid.parse::<u64>().is_ok()
 }
 
 fn star1() -> u32 {
@@ -65,7 +65,7 @@ fn star1() -> u32 {
         }
     }
 
-    return result;
+    result
 }
 
 fn star2() -> u32 {
@@ -87,7 +87,7 @@ fn star2() -> u32 {
         }
     }
 
-    return result;
+    result
 }
 
 pub fn main() {

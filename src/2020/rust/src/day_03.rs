@@ -14,7 +14,7 @@ fn star1() -> u32 {
         col = (col + 3) % line.len();
     }
 
-    return result;
+    result
 }
 
 fn star2(x: usize, y: usize) -> u64 {
@@ -31,7 +31,7 @@ fn star2(x: usize, y: usize) -> u64 {
         col = (col + x) % line.len();
     }
 
-    return result;
+    result
 }
 
 pub fn main() {

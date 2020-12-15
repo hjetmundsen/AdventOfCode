@@ -18,7 +18,7 @@ fn star1() -> usize {
         }
     }
 
-    return result;
+    result
 }
 
 fn star2() -> usize {
@@ -45,7 +45,7 @@ fn star2() -> usize {
         }
     }
 
-    return result;
+    result
 }
 
 pub fn main() {
