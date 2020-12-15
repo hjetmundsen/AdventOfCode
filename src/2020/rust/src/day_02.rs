@@ -5,7 +5,10 @@ fn star1() -> u32 {
     let mut result = 0;
     for line in lines {
         let parts: Vec<&str> = line.split(' ').collect();
-        let bounds: Vec<u32> = parts[0].split('-').map(|x| x.parse::<u32>().unwrap()).collect();
+        let bounds: Vec<u32> = parts[0]
+            .split('-')
+            .map(|x| x.parse::<u32>().unwrap())
+            .collect();
         let letter = parts[1].chars().next().unwrap();
         let password = parts[2];
 
@@ -24,11 +27,16 @@ fn star2() -> u32 {
     let mut result = 0;
     for line in lines {
         let parts: Vec<&str> = line.split(' ').collect();
-        let positions: Vec<u32> = parts[0].split('-').map(|x| x.parse::<u32>().unwrap()).collect();
+        let positions: Vec<u32> = parts[0]
+            .split('-')
+            .map(|x| x.parse::<u32>().unwrap())
+            .collect();
         let letter = parts[1].chars().next().unwrap();
         let password = parts[2];
 
-        if (password.chars().nth((positions[0]-1) as usize).unwrap() == letter) ^ (password.chars().nth((positions[1]-1) as usize).unwrap() == letter) {
+        if (password.chars().nth((positions[0] - 1) as usize).unwrap() == letter)
+            ^ (password.chars().nth((positions[1] - 1) as usize).unwrap() == letter)
+        {
             result += 1;
         }
     }

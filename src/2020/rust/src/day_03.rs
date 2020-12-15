@@ -36,6 +36,6 @@ fn star2(x: usize, y: usize) -> u64 {
 
 pub fn main() {
     let star1 = star1();
-    let star2 = star2(1,1) * star2(3,1) * star2(5,1) * star2(7,1) * star2(1,2);
+    let star2 = star2(1, 1) * star2(3, 1) * star2(5, 1) * star2(7, 1) * star2(1, 2);
     println!("DAY 3\n=====\nSTAR 1: {}\nSTAR 2: {}\n", star1, star2);
 }
