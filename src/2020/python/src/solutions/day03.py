@@ -41,4 +41,4 @@ def _star2():
 
 
 def day03():
-    print("STAR 1: {}\nSTAR 2: {}".format(_star1(), _star2()))
+    print("DAY 3\n=====\nSTAR 1: {}\nSTAR 2: {}\n".format(_star1(), _star2()))

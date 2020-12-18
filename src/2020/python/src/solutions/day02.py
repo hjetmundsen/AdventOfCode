@@ -1,4 +1,4 @@
-def star1():
+def _star1():
     result = 0
 
     for line in open("../../inputs/day2.txt", "r"):
@@ -12,7 +12,7 @@ def star1():
     return result
 
 
-def star2():
+def _star2():
     result = 0
 
     for line in open("../../inputs/day2.txt", "r"):
@@ -26,4 +26,4 @@ def star2():
 
 
 def day02():
-    print("STAR 1: {}\nSTAR 2: {}".format(star1(), star2()))
+    print("DAY 2\n=====\nSTAR 1: {}\nSTAR 2: {}\n".format(_star1(), _star2()))

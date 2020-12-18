@@ -1,4 +1,4 @@
-def star1():
+def _star1():
     s = set()
 
     for line in [int(x) for x in open("../../inputs/day1.txt", "r")]:
@@ -7,7 +7,7 @@ def star1():
         s.add(line)
 
 
-def star2():
+def _star2():
     nums = sorted([int(x) for x in open("../../inputs/day1.txt", "r")])
 
     for i in range(len(nums) - 2):
@@ -24,4 +24,4 @@ def star2():
 
 
 def day01():
-    print("STAR 1: {}\nSTAR 2: {}".format(star1(), star2()))
+    print("DAY 1\n=====\nSTAR 1: {}\nSTAR 2: {}\n".format(_star1(), _star2()))
