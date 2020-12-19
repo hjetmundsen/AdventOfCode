@@ -6,3 +6,5 @@ from .day05 import day05
 from .day06 import day06
 from .day07 import day07
 from .day08 import day08
+from .day09 import day09
+from .day10 import day10

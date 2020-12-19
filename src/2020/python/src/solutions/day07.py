@@ -29,7 +29,7 @@ def _star2():
             count += multiplier * search(s)
         return count
 
-    return search("shiny gold") - 1  # Rm one for shiny gold itself
+    return search("shiny gold") - 1
 
 
 def day07():
