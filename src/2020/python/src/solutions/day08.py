@@ -1,12 +1,14 @@
-def _star1():
-    instructions = [line for line in open("../../inputs/day8.txt", "r")]
+def _run_instructions(instructions: list[str]) -> tuple[int, bool]:
     visited = set()
-    i, acc = 0, 0
+    acc, i = 0, 0
     signs = {"+": 1, "-": -1}
 
     while True:
-        if i in visited:
-            return acc
+        if i == len(instructions):
+            return (acc, True)
+
+        if i in visited or i > len(instructions):
+            return (acc, False)
 
         visited.add(i)
 
@@ -14,18 +16,47 @@ def _star1():
 
         if code == "nop":
             i += 1
-            continue
-        if code == "acc":
+        elif code == "acc":
             acc += int(val[1:]) * signs[val[0]]
             i += 1
-            continue
         else:
             i += int(val[1:]) * signs[val[0]]
-            continue
 
 
-def _star2():
-    return 0
+def _find_jmp_and_nop(instructions: list[str]) -> list[int]:
+    return [
+        i
+        for i, instruction in enumerate(instructions)
+        if instruction.split(" ")[0] in {"jmp", "nop"}
+    ]
+
+
+def _swap_codes(instructions: list[str], index: int) -> list[str]:
+    code, val = instructions[index].split(" ")
+    code = "jmp" if code == "nop" else "nop"
+    return " ".join([code, val])
+
+
+def _star1() -> int:
+    instructions = [line.strip() for line in open("../../inputs/day8.txt", "r")]
+    acc, _ = _run_instructions(instructions)
+    return acc
+
+
+def _star2() -> int:
+    instructions = [line.strip() for line in open("../../inputs/day8.txt", "r")]
+    jmp_nop_indices = _find_jmp_and_nop(instructions)
+
+    print([instructions[i] for i in jmp_nop_indices])
+
+    for index in jmp_nop_indices:
+        instructions[index] = _swap_codes(instructions, index)
+        acc, reached_end = _run_instructions(instructions)
+
+        if reached_end:
+            return acc
+
+        instructions[index] = _swap_codes(instructions, index)
 
 
 def day08():

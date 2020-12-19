@@ -36,7 +36,7 @@ fn star2() -> i32 {
             match num + nums.get(left).unwrap() + nums.get(right).unwrap() {
                 sum if sum > 2020 => right -= 1,
                 sum if sum < 2020 => left += 1,
-                _ => return num * nums.get(left).unwrap() * nums.get(right).unwrap()
+                _ => return num * nums.get(left).unwrap() * nums.get(right).unwrap(),
             }
         }
     }

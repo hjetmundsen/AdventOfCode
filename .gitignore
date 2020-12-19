@@ -1,5 +1,7 @@
 .idea
 __pycache__
+tags
+poetry.lock
 
 #Added by cargo
 
