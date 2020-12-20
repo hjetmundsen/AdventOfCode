@@ -12,10 +12,11 @@ solution_map = {
     "9": solutions.day09,
     "10": solutions.day10,
     "11": solutions.day11,
+    "12": solutions.day12,
 }
 
 while True:
-    day = input("Which day would you like to run (1-11): ")
+    day = input("Which day would you like to run (1-12): ")
     print()
 
     if day == "exit":
