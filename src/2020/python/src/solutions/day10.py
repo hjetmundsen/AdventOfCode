@@ -1,4 +1,4 @@
-visited = set()
+from collections import defaultdict
 
 
 def _star1() -> int:
@@ -15,7 +15,11 @@ def _star1() -> int:
 
 
 def _star2() -> int:
-    nums = sorted([int(line.strip()) for line in open("../../inputs/day10.txt")])
+    nums = [0] + sorted([int(line.strip()) for line in open("../../inputs/day10.txt")])
+    counts = defaultdict(int, {0: 1})
+    for i in nums[1:]:
+        counts[i] = counts[i - 1] + counts[i - 2] + counts[i - 3]
+    return counts[nums[-1]]
 
 
 def day10():
