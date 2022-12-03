@@ -1,22 +1,18 @@
 use std::fs::File;
-// use std::fs;
 use std::io::{self, BufRead};
 use std::path::Path;
+
 pub fn file_to_lines(path: &str) -> Vec<String> {
     let path = Path::new(path);
     let file = File::open(&path).unwrap();
     let lines = io::BufReader::new(file).lines();
-    let mut str_lines: Vec<String> = vec![];
+    let mut string_lines: Vec<String> = Vec::new();
 
     for line in lines {
         if let Ok(line) = line {
-            str_lines.push(line);
+            string_lines.push(line);
         };
     }
-    str_lines
-}
 
-// pub fn file_to_string(path: &str) -> String {
-//     let contents = fs::read_to_string(path).unwrap();
-//     contents
-// }
+    string_lines
+}
