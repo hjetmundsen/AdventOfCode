@@ -5,7 +5,7 @@ mod day_03;
 mod utils;
 
 fn main() {
-    day_01::main();
-    day_02::main();
-    day_03::main();
+    day_01::solve();
+    day_02::solve();
+    day_03::solve();
 }

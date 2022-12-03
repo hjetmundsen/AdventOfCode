@@ -37,6 +37,6 @@ fn star2() -> u32 {
     lines.iter().map(|line| rules.get(line.as_str()).unwrap()).sum()
 }
 
-pub fn main() {
+pub fn solve() {
     println!("DAY 2\n=====\nSTAR 1: {}\nSTAR 2: {}\n", star1(), star2());
 }

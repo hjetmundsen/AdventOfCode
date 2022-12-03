@@ -27,6 +27,6 @@ fn star2() -> u32 {
     min_heap.iter().map(|Reverse(x)| x).sum()
 }
 
-pub fn main() {
+pub fn solve() {
     println!("DAY 1\n=====\nSTAR 1: {}\nSTAR 2: {}\n", star1(), star2());
 }

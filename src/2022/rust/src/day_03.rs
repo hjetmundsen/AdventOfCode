@@ -56,6 +56,6 @@ fn star2() -> u32 {
     score
 }
 
-pub fn main() {
+pub fn solve() {
     println!("DAY 3\n=====\nSTAR 1: {}\nSTAR 2: {}\n", star1(), star2());
 }
