@@ -8,15 +8,8 @@ fn star1() -> u32 {
     let lines: Vec<String> = utils::file_to_lines("../inputs/day_01.txt");
 
     let mut max_cals: u32 = 0;
-    let mut cur_cals: u32 = 0;
-    for line in lines {
-        if line.is_empty() {
-            max_cals = cmp::max(cur_cals, max_cals);
-            cur_cals = 0;
-            continue;
-        }
-
-        cur_cals += line.parse::<u32>().unwrap();
+    for elf in lines.split(|line| line.is_empty()) {
+        max_cals = cmp::max(max_cals, elf.iter().map(|item| item.parse::<u32>().unwrap()).sum());
     }
 
     max_cals
@@ -25,30 +18,16 @@ fn star1() -> u32 {
 fn star2() -> u32 {
     let lines: Vec<String> = utils::file_to_lines("../inputs/day_01.txt");
     let mut min_heap: BinaryHeap<Reverse<u32>> = BinaryHeap::new();
-    let mut cur_cals: u32 = 0;
 
-    for line in lines {
-        if line.is_empty() {
-            if min_heap.len() < 3 {
-                min_heap.push(Reverse(cur_cals));
-            } else if &Reverse(cur_cals) < min_heap.peek().unwrap() {
-                min_heap.pop();
-                min_heap.push(Reverse(cur_cals));
-            }
-
-            cur_cals = 0;
-            continue;
+    for elf in lines.split(|line| line.is_empty()) {
+        min_heap.push(Reverse(elf.iter().map(|item| item.parse::<u32>().unwrap()).sum()));
+        
+        if min_heap.len() > 3 {
+            min_heap.pop();
         }
-
-        cur_cals += line.parse::<u32>().unwrap();
     }
-
-    let mut total_cals: u32 = 0;
-    while let Some(Reverse(cal)) = min_heap.pop() {
-        total_cals += cal;
-    }
-
-    total_cals
+    
+    min_heap.iter().map(|Reverse(x)| x).sum()
 }
 
 pub fn main() {
